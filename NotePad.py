@@ -12,7 +12,7 @@ current_file = None
 def new_file():
     global current_file
     text_area.delete(1.0,tkinter.END)
-    window.title("NotePade")
+    window.title("NotePad")
 
 def open_file():
     global current_file
@@ -26,7 +26,7 @@ def open_file():
             text_area.delete(1.0,tkinter.END)
             text_area.insert(tkinter.END,f.read())
         current_file= file_path
-        window.title(f"NotePade - {file_path}")
+        window.title(f"NotePad - {file_path}")
     except Exception as e:
         messagebox.showerror("Error",str(e))
 
@@ -53,7 +53,7 @@ def save_as_file():
         with open (file_path,"w", encoding="utf-8") as f:
             f.write(text_area.get(1.0,tkinter.END))
         current_file = file_path ;
-        window.title(f"NotePade - {file_path}")
+        window.title(f"NotePad - {file_path}")
     except Exception as e:
         messagebox.showerror("Error",str(e))
 
