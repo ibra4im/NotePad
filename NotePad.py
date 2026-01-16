@@ -1,9 +1,14 @@
 import tkinter
+import os
 from tkinter import filedialog, messagebox
 window = tkinter.Tk()
 # creat main window size and name of app 
 window.geometry("800x500")
 window.title("NotPade")
+
+icon_path = os.path.join(os.path.dirname(__file__),"app_icon.png")
+icon = tkinter.PhotoImage(file=icon_path)
+window.iconphoto(True,icon)
 
 current_file = None
 
